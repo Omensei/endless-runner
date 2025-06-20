@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-
+    private bool hasCrashed = false;
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if (hasCrashed) { return; }
         if (collision.CompareTag("Obstacle"))
         {
-            Debug.Log("Game Over!");
-            Time.timeScale = 0f;
+            hasCrashed = true;
+            Debug.Log("Player has hit an obstacle");
+            GameManager.Instance.TriggerGameOver();
+
         }
     }
 
