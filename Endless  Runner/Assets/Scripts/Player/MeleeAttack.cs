@@ -26,7 +26,7 @@ public class MeleeAttack : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyHealth>()?.TakeDamage(attackDamage);
+           // enemy.GetComponent<EnemyHealth>()?.TakeDamage(attackDamage);
 
         }
 
